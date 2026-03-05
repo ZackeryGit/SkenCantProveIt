@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: SkenCantProveIt_Scene_01.ma
-//Last modified: Thu, Mar 05, 2026 09:57:30 AM
+//Last modified: Thu, Mar 05, 2026 10:10:12 AM
 //Codeset: 1252
 file -rdi 1 -ns "SkenRigV1" -rfn "SkenRigV1RN" -op "v=0;" -typ "mayaAscii" "C:/Users/zacke/Documents/Developement/Animation/SkenCantProveIt//assets/SkenRigV1/scenes/SkenRigV1.ma";
 file -rdi 1 -ns "TeleHeadRig" -rfn "TeleHeadRigRN" -op "v=0;" -typ "mayaAscii"
@@ -14,27 +14,28 @@ file -r -ns "City_Street" -dr 1 -rfn "City_StreetRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/zacke/Documents/Developement/Animation/SkenCantProveIt//assets/City Street/scenes/City_Street.ma";
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
-requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiStandardSurface"
-		 -nodeType "aiImagerDenoiserOidn" "mtoa" "5.4.2.1";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiSkyDomeLight"
+		 -nodeType "aiStandardSurface" -nodeType "aiPhysicalSky" -nodeType "aiImagerDenoiserOidn"
+		 "mtoa" "5.4.2.1";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "1873D57E-44C4-F12F-6BED-3EBE70BF5B94";
+fileInfo "UUID" "E29303DD-4746-2F32-C2BE-5FB43F97DF8B";
 createNode transform -s -n "persp";
 	rename -uid "B765DB94-4FEC-B6A4-C2FC-F094A960BBF9";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -2731.1021207259937 258.6675333867322 263.32081402776822 ;
-	setAttr ".r" -type "double3" -6.3383527296417475 -92.200000000001594 -2.5444437451708134e-14 ;
+	setAttr ".t" -type "double3" -5938.8791038941372 615.24579577210795 140.09045252530288 ;
+	setAttr ".r" -type "double3" -6.3383527296417483 -92.200000000001594 -2.5444437451708134e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E225F8C8-46ED-065F-3240-A8BD53F463B1";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
 	setAttr ".ncp" 1;
 	setAttr ".fcp" 100000;
-	setAttr ".coi" 2303.2032143680444;
+	setAttr ".coi" 5533.0897375984277;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -134,6 +135,8 @@ createNode mesh -n "GreenScreenShape1" -p "GreenScreen1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
@@ -176,6 +179,8 @@ createNode mesh -n "GreenScreenShape1" -p "GreenScreen1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".ai_vidr" no;
+	setAttr ".ai_vidt" no;
 createNode transform -n "GreenScreen" -p "Green_Screen_Grp";
 	rename -uid "7FC496D4-484F-DB36-F182-E2AC11AB004D";
 	setAttr ".t" -type "double3" -1849.5998390042373 -125.00006235030112 570.99980287914684 ;
@@ -188,11 +193,15 @@ createNode mesh -n "GreenScreenShape" -p "GreenScreen";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_vidr" no;
+	setAttr ".ai_vidt" no;
 createNode transform -n "GreenScreen2" -p "Green_Screen_Grp";
 	rename -uid "4A9C7545-4472-8DC5-79F7-6889BBB0D239";
 	setAttr ".t" -type "double3" 5611.033756233539 6159.1473444157646 6931.6009426651099 ;
@@ -205,6 +214,8 @@ createNode mesh -n "GreenScreenShape2" -p "GreenScreen2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
 	setAttr -s 6 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
@@ -247,8 +258,17 @@ createNode mesh -n "GreenScreenShape2" -p "GreenScreen2";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".ai_vidr" no;
+	setAttr ".ai_vidt" no;
+createNode transform -n "aiSkyDomeLight1" -p "Green_Screen_Grp";
+	rename -uid "90FA6F67-44E8-B54B-0829-809B2FF15773";
+	setAttr ".s" -type "double3" 5.34399377765385 5.34399377765385 5.34399377765385 ;
+createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
+	rename -uid "053B0179-491C-32B7-B8AF-55AFAC881A18";
+	setAttr -k off ".v";
+	setAttr ".ai_exposure" 3;
 createNode fosterParent -n "SkenRigV1RNfosterParent1";
-	rename -uid "E9640542-44AC-BA4D-DE79-7FA4B51E0F02";
+	rename -uid "D2E0D568-4876-E610-0181-0794F0645187";
 createNode parentConstraint -n "L_Arm_Handle_Ctrl_IK_parentConstraint1" -p "SkenRigV1RNfosterParent1";
 	rename -uid "0594182B-49CC-6A03-A75D-FE949E5E5FDB";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Sken_Left_Hand_ParentW0" -dv 1 -min 
@@ -297,26 +317,26 @@ createNode parentConstraint -n "R_Arm_Handle_Ctrl_IK_parentConstraint1" -p "Sken
 	setAttr ".rsrr" -type "double3" -24.8853142054991 44.657337649248461 -33.42378770894566 ;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "FF4268E4-4874-C56B-63F8-9598E4F0AC1C";
+	rename -uid "C2B89B89-4076-00B8-0059-5F94AAF33CC0";
 	setAttr -s 68 ".lnk";
 	setAttr -s 68 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "1900FBAE-4C95-F935-57B6-6D9688EE4551";
+	rename -uid "0A615D2F-4A06-290D-87B0-FD87129D0C87";
 	setAttr ".cdl" 1;
-	setAttr ".dli[1]"  1;
-	setAttr -s 2 ".dli";
+	setAttr -s 3 ".dli[1:2]"  1 2;
+	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "E657A98D-480F-B74D-56F4-00A19821111F";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "42B1A9AD-4B1C-714E-AB42-C2B788BC023A";
+	rename -uid "9C5EDE8E-45BC-3E26-E37E-56832443C147";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "ED87DBE0-4CF7-C79F-04D4-9989DEAD2D91";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "1F9C810D-4C08-5BB5-5CF4-86A575638A7E";
+	rename -uid "17E7A6C9-4F7E-631C-83C3-21B867BDDF16";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "EE4827FA-4B57-357D-807A-8A81FCF1007A";
+	rename -uid "0CC03130-43EF-A1F9-1EAD-13965D1612A8";
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "24E254BA-496E-A72D-51BE-7DB4F652EB21";
 	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
@@ -582,15 +602,23 @@ createNode reference -n "City_StreetRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"City_StreetRN"
 		"City_StreetRN" 0
-		"City_StreetRN" 6
+		"City_StreetRN" 10
 		2 "|City_Street:Scene|City_Street:Building_2|City_Street:building1|City_Street:polySurface8" 
 		"translate" " -type \"double3\" 4109.76012166296095529 -107.65928398910583041 1526.4109747357924789"
 		
 		2 "|City_Street:Scene|City_Street:Wall|City_Street:polySurface7" "translate" 
 		" -type \"double3\" -1182.94348504082654472 -107.65928398910925523 -414.94990797440004826"
 		
+		2 "|City_Street:Scene|City_Street:Wall|City_Street:polySurface7" "translateX" 
+		" -av"
+		2 "|City_Street:Scene|City_Street:Wall|City_Street:polySurface7" "translateY" 
+		" -av"
+		2 "|City_Street:Scene|City_Street:Wall|City_Street:polySurface7" "translateZ" 
+		" -av"
 		2 "|City_Street:Scene|City_Street:Wall|City_Street:polySurface7" "rotate" 
 		" -type \"double3\" 0 -89.99999999999995737 0"
+		2 "|City_Street:Scene|City_Street:Wall|City_Street:polySurface7" "rotateY" 
+		" -av"
 		2 "City_Street:Scene_Layer" "displayType" " 2"
 		2 "City_Street:Scene_Layer" "visibility" " 1"
 		2 "City_Street:pasted__Scene_Layer" "visibility" " 1";
@@ -643,6 +671,16 @@ createNode displayLayer -n "GreenScreen_Layer";
 	setAttr ".v" no;
 	setAttr ".ufem" -type "stringArray" 0  ;
 	setAttr ".do" 1;
+createNode displayLayer -n "City_Street1:Scene_Layer";
+	rename -uid "969A4ED5-414F-AAFA-C5D1-9682F3B34A30";
+	setAttr ".dt" 2;
+	setAttr ".v" no;
+	setAttr ".ufem" -type "stringArray" 0  ;
+	setAttr ".do" 1;
+createNode aiPhysicalSky -n "City_Street1:aiPhysicalSky1";
+	rename -uid "83D74222-456B-2379-260E-45A86740B53F";
+createNode aiPhysicalSky -n "aiPhysicalSky1";
+	rename -uid "2701F3DD-4FA7-478D-689F-38A39DCAA904";
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -av -cb on ".ihi";
@@ -705,7 +743,7 @@ select -ne :defaultRenderingList1;
 	setAttr -k on ".ihi";
 	setAttr -s 4 ".r";
 select -ne :lightList1;
-	setAttr -s 4 ".l";
+	setAttr -s 5 ".l";
 select -ne :defaultTextureList1;
 	setAttr -s 94 ".tx";
 select -ne :standardSurface1;
@@ -761,8 +799,8 @@ select -ne :defaultRenderGlobals;
 	setAttr -av -k on ".esr";
 	setAttr -av -k on ".ors";
 	setAttr -cb on ".sdf";
-	setAttr -av -k on ".outf";
-	setAttr -av -cb on ".imfkey";
+	setAttr -av -k on ".outf" 51;
+	setAttr -av -cb on ".imfkey" -type "string" "png";
 	setAttr -av -k on ".gama";
 	setAttr -k on ".exrc";
 	setAttr -k on ".expt";
@@ -863,7 +901,7 @@ select -ne :defaultResolution;
 	setAttr -av -k on ".isu";
 	setAttr -av -k on ".pdu";
 select -ne :defaultLightSet;
-	setAttr -s 4 ".dsm";
+	setAttr -s 5 ".dsm";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -947,6 +985,8 @@ connectAttr "GreenScreen_Layer.di" "GreenScreen1.do";
 connectAttr "GreenScreen_Layer.di" "GreenScreen.do";
 connectAttr "polyCube1.out" "GreenScreenShape.i";
 connectAttr "GreenScreen_Layer.di" "GreenScreen2.do";
+connectAttr "GreenScreen_Layer.di" "aiSkyDomeLight1.do";
+connectAttr "aiPhysicalSky1.out" "aiSkyDomeLightShape1.sc";
 connectAttr "Sken_Left_Hand_Parent.t" "L_Arm_Handle_Ctrl_IK_parentConstraint1.tg[0].tt"
 		;
 connectAttr "Sken_Left_Hand_Parent.rp" "L_Arm_Handle_Ctrl_IK_parentConstraint1.tg[0].trp"
@@ -1010,9 +1050,12 @@ connectAttr "GreenFlat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[
 connectAttr "surfaceShader1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
 connectAttr "layerManager.dli[1]" "GreenScreen_Layer.id";
+connectAttr "layerManager.dli[2]" "City_Street1:Scene_Layer.id";
 connectAttr "aiStandardSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "surfaceShader1SG.pa" ":renderPartition.st" -na;
 connectAttr "Green.msg" ":defaultShaderList1.s" -na;
 connectAttr "GreenFlat.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "aiSkyDomeLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
 // End of SkenCantProveIt_Scene_01.ma
