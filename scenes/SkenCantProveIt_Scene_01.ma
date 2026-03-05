@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: SkenCantProveIt_Scene_01.ma
-//Last modified: Thu, Mar 05, 2026 09:26:30 AM
+//Last modified: Thu, Mar 05, 2026 09:31:20 AM
 //Codeset: 1252
 file -rdi 1 -ns "SkenRigV1" -rfn "SkenRigV1RN" -op "v=0;" -typ "mayaAscii" "C:/Users/zacke/Documents/Developement/Animation/SkenCantProveIt//assets/SkenRigV1/scenes/SkenRigV1.ma";
 file -rdi 1 -ns "TeleHeadRig" -rfn "TeleHeadRigRN" -op "v=0;" -typ "mayaAscii"
@@ -22,19 +22,19 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "FD8402D3-4DB9-C6EF-1C1F-D9B3986B4FB7";
+fileInfo "UUID" "4EB42129-4613-1EBF-DB6D-0994F410C447";
 createNode transform -s -n "persp";
 	rename -uid "B765DB94-4FEC-B6A4-C2FC-F094A960BBF9";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -4434.225004620268 1870.2383172496659 2065.5223052855849 ;
-	setAttr ".r" -type "double3" -21.938352729638218 -68.600000000000492 -4.3583955159512487e-15 ;
+	setAttr ".t" -type "double3" -411.04498496913106 1717.2773515004092 2204.2183956456979 ;
+	setAttr ".r" -type "double3" -27.938352729638787 -12.600000000000847 4.0738037370434473e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E225F8C8-46ED-065F-3240-A8BD53F463B1";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
 	setAttr ".ncp" 1;
 	setAttr ".fcp" 100000;
-	setAttr ".coi" 5495.5138911991817;
+	setAttr ".coi" 2728.3943469896421;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -121,7 +121,7 @@ createNode camera -n "Scene_Main_CameraShape" -p "Scene_Main_Camera";
 	setAttr ".tp" -type "double3" 801.83247651825047 -126.36848161226533 146.89792243925277 ;
 	setAttr ".dfg" yes;
 createNode fosterParent -n "SkenRigV1RNfosterParent1";
-	rename -uid "DEBD855A-47D8-F62D-054E-46A456E858E1";
+	rename -uid "C0BE3750-40F6-2E59-3771-608AD8A359B3";
 createNode parentConstraint -n "L_Arm_Handle_Ctrl_IK_parentConstraint1" -p "SkenRigV1RNfosterParent1";
 	rename -uid "0594182B-49CC-6A03-A75D-FE949E5E5FDB";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Sken_Left_Hand_ParentW0" -dv 1 -min 
